@@ -1,0 +1,91 @@
+<odoo>
+    <data>
+        <template id="finance_on_states_template">
+            <t t-call="web.html_container">
+               <h4 class="text-center">
+                    <strong>
+                        <span>Finance On States In Period</span>
+                    </strong>
+                    <br/>
+                    <strong>
+                        <span>From:</span>
+                    </strong>
+                    <t t-esc="from_date"/>
+                    <strong>
+                        <span>To:</span>
+                    </strong>
+                    <t t-esc="to_date"/>
+                </h4>
+                <br/>
+                <table class="table table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>#</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>State Name</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Amount Cert</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Finance Proportion %100</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="state_amount_total" t-value="0"/>
+                            <t t-set="state_share_total" t-value="0"/>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr> 
+                                <td class="text-center">
+                                    <span t-esc="doc_index+1"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-esc="doc['state']"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-esc="doc['state_amount']"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-esc="doc['state_share']"/>
+                                 </td>
+                             </tr>
+
+                             <t t-set="state_amount_total" t-value="state_amount_total + doc['state_amount']"/>
+                                <t t-set="state_share_total" t-value="state_share_total + doc['state_share']"/>
+                            </t>
+
+                            <tr>
+                                <td colspan="2" class="text-center">
+                                    <b>
+                                        <span>Total</span>
+                                    </b>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="'{0:,.2f}'.format(state_amount_total)"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="'{0:,.0f}'.format(state_share_total)"/>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+                                <div class="text-muted">
+                                    page:
+                                    <span class="page"/>
+                                    /
+                                    <span class="topage"/>
+                                </div>
+            </t>
+        </template>
+        <report id="finance_on_states_report"
+                model="bank.finance_request"
+                string="Finance On States Report"
+                file="bank.finance_on_states_template"
+                name="bank.finance_on_states_template"
+                report_type="qweb-html"
+        />
+    </data>
+</odoo>

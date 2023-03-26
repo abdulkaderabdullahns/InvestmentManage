@@ -1,0 +1,160 @@
+<odoo>
+    <data>
+        <template id="operations_stumbleds_template">
+            <t t-call="web.html_container">
+                <div class="header" style="border-bottom: 2px solid black;">
+                <div class="row"
+                     style="font-family: 'Amiri', 'serif';width: 92%;height: 103px;margin-left: 7px;">
+                    <div style="width: 40%;">
+                         <br/>
+                         <strong>
+                            <span>Sudani Agrarion of Bank</span>
+                         </strong>
+                         <br/>
+                            <span>Finance of Bank</span>
+                     </div>
+
+                    <!-- <div style="width: 31%;margin-left: 7%;">
+                         <img src="bank/static/src/imge/tasneem.png" width="70" 
+                            height="70"/>
+                    </div> -->
+                            
+                    <div class="text-right" style="width: 29%;">
+                        <br/>
+                         <strong>
+                            <span>البنك الزراعي السوداني</span>
+                         </strong>
+                         <br/>
+                            <span>الخرطوم الرئاسة المقرن</span>
+                     </div>
+                </div>
+            </div>
+               <h4 class="text-center">
+                    <strong>
+                        <span>Operations Stumbleds Report In Period</span>
+                    </strong>
+                    <br/>
+                    <strong>
+                        <span>Till Day:</span>
+                    </strong>
+                    <t t-esc="from_date"/>
+                    <br/>
+                </h4>
+                <br/>
+                <table class="table table-condensed table-bordered">
+                    <thead>
+                        <tr> 
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>#</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Request Number</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Finance Type</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Section</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Acivity</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Finance Formula</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Amount Cert</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Instalments Paid Kist</strong>
+                            </th>
+                            <th class="text-center">
+                                 <strong>Instalments Paid Cert</strong>
+                            </th>
+                            <th class="text-center">
+                                 <strong>Instalments UnPaid Kist</strong>
+                            </th>
+                            <th class="text-center" >
+                                <strong>Stumbling Cert</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Stumbling Reason</strong>
+                            </th>
+                            <!-- <th class="text-center" style="background-color:#ccdldl;">
+                                <strong></strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong></strong>
+                            </th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr> 
+                                <td class="text-center">
+                                    <span t-esc="doc_index+1"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.requer_num"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.fin_type"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.name_section"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.name_activity"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.for_number"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.amount_cert"/>
+                                 </td>
+                             </tr>
+                            </t>
+                    </tbody> 
+                </table>
+                <div t-attf-class="footer o_standard_footer"
+                 style="font-family: 'Amiri', 'serif';width: 92%;height: 103px;margin-left: 7px;">
+                 <div class="text-center" style="border-top: 2px solid black;">
+                    <ul class="list-inline mb4">
+                        <li class="list-inline-item d-inline">
+                            <strong>Phone:</strong>
+                            <span class="o_force_ltr"><b>+249122454000</b></span>
+                        </li>
+                        <li class="list-inline-item d-inline">
+                            <strong>Email:</strong>
+                            <span>ABC@gmail.com</span>
+                        </li>
+                        <li class="list-inline-item d-inline">
+                            <strong>Web:</strong>
+                            <span><b>www.ABC.com</b></span>
+                        </li>
+                    </ul>
+                    <div class="text-muted">
+                        page:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                    </div>
+               </div>
+            </div>
+                <div class="text-muted">
+                    page:
+                    <span class="page"/>
+                    /
+                    <span class="topage"/>
+                </div>
+            </t>
+        </template>
+        <report id="operations_stumbleds_report"
+                model="bank.finance_request"
+                string="Operations Stumbleds Report"
+                file="bank.operations_stumbleds_template"
+                name="bank.operations_stumbleds_template"
+                report_type="qweb-html"
+        />
+    </data>
+</odoo>

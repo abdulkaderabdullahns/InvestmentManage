@@ -1,0 +1,98 @@
+<odoo>
+    <data>
+        <template id="finance_on_localities_template">
+            <t t-call="web.html_container">
+               <h4 class="text-center">
+                    <strong>
+                        <span>Finance On Localities In Period</span>
+                    </strong>
+                    <br/>
+                    <strong>
+                        <span>From:</span>
+                    </strong>
+                    <t t-esc="from_date"/>
+                    <strong>
+                        <span>To:</span>
+                    </strong>
+                    <t t-esc="to_date"/>
+                </h4>
+                <br/>
+                <table class="table table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>#</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Localities Name</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Amount Cert</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Finance Proportion %100</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="locality_amount_total" t-value="0"/>
+                            <t t-set="locality_share_total" t-value="0"/>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr> 
+                                <td class="text-center">
+                                    <span t-esc="doc_index+1"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-esc="doc['locality']"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-esc="doc['locality_amount']"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-esc="doc['locality_share']"/>
+                                 </td>
+                             </tr>
+
+                             <t t-set="locality_amount_total" t-value="locality_amount_total + doc['locality_amount']"/>
+                                <t t-set="locality_share_total" t-value="locality_share_total + doc['locality_share']"/>
+                            </t>
+
+                            <tr>
+                                <td colspan="2" class="text-center">
+                                    <b>
+                                        <span>Total</span>
+                                    </b>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="'{0:,.2f}'.format(locality_share_total)"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="'{0:,.0f}'.format(locality_share_total)"/>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+                                <div class="text-muted">
+                                    page:
+                                    <span class="page"/>
+                                    /
+                                    <span class="topage"/>
+                                </div>
+                
+                                <div class="text-muted">
+                                    page:
+                                    <span class="page"/>
+                                    /
+                                    <span class="topage"/>
+                                </div>
+        </t>
+        </template>
+        <report id="finance_on_localities_report"
+                model="bank.finance_request"
+                string="Finance On Localities"
+                file="bank.finance_on_localities_template"
+                name="bank.finance_on_localities_template"
+                report_type="qweb-html"
+        />
+    </data>
+</odoo>

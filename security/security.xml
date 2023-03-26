@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+
+        <record id="bank_category" model="ir.module.category">
+            <field name="name">Bank</field>
+<!--            <field name="sequence">10</field>-->
+        </record>
+
+        <record id="group_admin" model="res.groups">
+            <field name="name">Admin</field>
+            <field name="category_id" ref="bank_category"/>
+        </record>
+
+        <record id="group_manger" model="res.groups">
+            <field name="name">Manger</field>
+            <field name="category_id" ref="bank_category"/>
+        </record>
+
+        <record id="group_dataentry" model="res.groups">
+            <field name="name">Data Entry</field>
+            <field name="category_id" ref="bank_category"/>
+        </record>
+
+
+    </data>
+</odoo>

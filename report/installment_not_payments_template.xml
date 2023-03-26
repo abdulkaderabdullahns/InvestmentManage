@@ -1,0 +1,172 @@
+<odoo>
+    <data>
+        <template id="installments_not_payments_template">
+            <t t-call="web.html_container">
+                <div class="header" style="border-bottom: 2px solid black;">
+                <div class="row"
+                     style="font-family: 'Amiri', 'serif';width: 92%;height: 103px;margin-left: 7px;">
+                    <div style="width: 40%;">
+                         <br/>
+                         <strong>
+                            <span>Sudani Agrarion of Bank</span>
+                         </strong>
+                         <br/>
+                            <span>Finance of Bank</span>
+                     </div>
+
+                    <!-- <div style="width: 31%;margin-left: 7%;">
+                         <img src="bank/static/src/imge/tasneem.png" width="70"
+                            height="70"/>
+                    </div> -->
+
+                    <div class="text-right" style="width: 29%;">
+                        <br/>
+                         <strong>
+                            <span>البنك الزراعي السوداني</span>
+                         </strong>
+                         <br/>
+                            <span>الخرطوم الرئاسة المقرن</span>
+                     </div>
+                </div>
+            </div>
+
+               <h4 class="text-center">
+                    <strong>
+                        <span>Installments Payments In Period</span>
+                    </strong>
+                    <br/>
+                    <strong>
+                        <span>From:</span>
+                    </strong>
+                    <t t-esc="from_date"/>
+                    <strong>
+                        <span>To:</span>
+                    </strong>
+                    <t t-esc="to_date"/>
+                   <strong>
+                        <span>customer id:</span>
+                    </strong>
+                    <t t-esc="customer"/>
+                   <strong>
+                        <span>customer name:</span>
+                    </strong>
+                    <t t-esc="cust_name"/>
+                   <strong>
+                        <span>Requer id:</span>
+                    </strong>
+                    <t t-esc="re_number"/>
+                   <strong>
+                        <span>Requer Date:</span>
+                    </strong>
+                    <t t-esc="req_date"/>
+                   <strong>
+                        <span>Finance Type :</span>
+                    </strong>
+                    <t t-esc="fintype"/>
+                   <strong>
+                        <span>Section:</span>
+                    </strong>
+                    <t t-esc="number"/>
+                   <strong>
+                        <span>Activity:</span>
+                    </strong>
+                    <t t-esc="number_id"/>
+                   <strong>
+                        <span>Formula:</span>
+                    </strong>
+                    <t t-esc="for_number"/>
+                </h4>
+                <br/>
+                <table class="table table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>#</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Install Number</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Pay Date</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong> Remaing Install Number</strong>
+                            </th>
+
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Paied Amount</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Remaing Amount</strong>
+                            </th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr>
+                                <td class="text-center">
+                                    <span t-esc="doc_index+1"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.install_num"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.pay_date "/>
+                                 </td>
+                                  <td class="text-center">
+                                    <span t-field="doc.remaing_istall"/>
+                                   </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.paied_amount"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.remaining_amount"/>
+                                 </td>
+                             </tr>
+                            </t>
+                    </tbody>
+                </table>
+                <div t-attf-class="footer o_standard_footer"
+                 style="font-family: 'Amiri', 'serif';width: 92%;height: 103px;margin-left: 7px;">
+                 <div class="text-center" style="border-top: 2px solid black;">
+                    <ul class="list-inline mb4">
+                        <li class="list-inline-item d-inline">
+                            <strong>Phone:</strong>
+                            <span class="o_force_ltr"><b>+249122454000</b></span>
+                        </li>
+                        <li class="list-inline-item d-inline">
+                            <strong>Email:</strong>
+                            <span>ABC@gmail.com</span>
+                        </li>
+                        <li class="list-inline-item d-inline">
+                            <strong>Web:</strong>
+                            <span><b>www.ABC.com</b></span>
+                        </li>
+                    </ul>
+                    <div class="text-muted">
+                        page:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                    </div>
+               </div>
+            </div>
+                <div class="text-muted">
+                    page:
+                    <span class="page"/>
+                    /
+                    <span class="topage"/>
+                </div>
+            </t>
+        </template>
+
+         <report id="installments_not_payments_report"
+                model="bank.installments_not_payments"
+                string="Installments Not Payments Report"
+                file="bank.installments_not_payments_template"
+                name="bank.installments_not_payments_template"
+                report_type="qweb-html"
+        />
+    </data>
+</odoo>

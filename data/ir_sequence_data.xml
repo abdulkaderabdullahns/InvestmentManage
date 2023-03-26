@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Sequences for sale.order -->
+        <record id="seq_state" model="ir.sequence">
+            <field name="name">State Sequence</field>
+            <field name="code">states.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">ST</field>
+            <field name="padding">2</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+        <record id="seq_localities" model="ir.sequence">
+            <field name="name">localities Sequence</field>
+            <field name="code">localities.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">ST</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_job" model="ir.sequence">
+            <field name="name">Job Sequence</field>
+            <field name="code">job.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">ST</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_section" model="ir.sequence">
+            <field name="name">ٍٍSection Sequence</field>
+            <field name="code">section.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">ST</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+
+
+        </record>
+        <record id="seq_activity" model="ir.sequence">
+            <field name="name">Activity Sequence</field>
+            <field name="code">activity.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">ST</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_formula" model="ir.sequence">
+            <field name="name">Formula Sequence</field>
+            <field name="code">formula.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">ST</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_gurantee" model="ir.sequence">
+            <field name="name">Gurantee Sequence</field>
+            <field name="code">gurantee.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">ST</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_rejection_reasons" model="ir.sequence">
+            <field name="name">Rejection Rreasons Sequence</field>
+            <field name="code">rejection_reasons.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">ST</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_stumbling_reasons" model="ir.sequence">
+            <field name="name">Stumbling Reasons Sequence</field>
+            <field name="code">stumbling_reasons.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">ST</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_judges" model="ir.sequence">
+            <field name="name">Judges Sequence</field>
+            <field name="code">judges.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">ST</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_courts" model="ir.sequence">
+            <field name="name">Courts Sequence</field>
+            <field name="code">courts.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">CO</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="request_finance_Sequence" model="ir.sequence">
+            <field name="name">finance_request Sequence</field>
+            <field name="code">finance_request.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">RQU/%(range_year)s/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="payments_customer" model="ir.sequence">
+            <field name="name">first_payments_customers Sequence</field>
+            <field name="code">first_payments_customers.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">FPC/%(range_year)s/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+        <record id="Sequence_transaction_installment" model="ir.sequence">
+            <field name="name">transaction_installments Sequence</field>
+            <field name="code">transaction_installments.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">TRA/%(range_year)s/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="Seqinstallments_paymentsallment" model="ir.sequence">
+            <field name="name">installments_payments Sequence</field>
+            <field name="code">installments_payments.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">IP/%(range_year)s/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+
+        <record id="seq_stumbling_STU" model="ir.sequence">
+            <field name="name">stumbling Sequence</field>
+            <field name="code">stumbling.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">STU/%(range_year)s/</field>
+            <field name="padding">3</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_transmit_to_low_managements" model="ir.sequence">
+            <field name="name">transmit_to_low_mangement Sequence</field>
+            <field name="code">transmit_to_low_mangement.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">TTLM/%(range_year)s/</field>
+            <field name="padding">3</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="Sequence_rescheduled" model="ir.sequence">
+            <field name="name">rescheduled Sequence</field>
+            <field name="code">rescheduled.sequence.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">TTLM/%(range_year)s/</field>
+            <field name="padding">3</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="Seque_rescheduled" model="ir.sequence">
+            <field name="name">rescheduled Sequence</field>
+            <field name="code">transmit_to_court.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">TTLM/%(range_year)s/</field>
+            <field name="padding">3</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="Seque_Requestnumber" model="ir.sequence">
+            <field name="name">Requestnumber Sequence</field>
+            <field name="code">Requestnumber.code</field>
+            <field name="active">TRUE</field>
+<!--            <field name="prefix">TTLM/%(range_year)s/</field>-->
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

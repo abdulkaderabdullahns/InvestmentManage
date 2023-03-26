@@ -1,0 +1,2274 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="imag_action_s" model="ir.actions.act_window">
+            <field name="name">imag</field>
+            <field name="res_model">bank.imag</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <record id="imag_form" model="ir.ui.view">
+            <field name="name">bank.imag.form</field>
+            <field name="model">bank.imag</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <field name="image" widget="image" width="3000px" height="3000px"/>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="bank_action_s" model="ir.actions.act_window">
+            <field name="name">States</field>
+            <field name="res_model">bank.states</field>
+            <field name="view_mode">tree,form,search</field>
+            <!--			<field name="view_id">ref="states_tree"</field>-->
+        </record>
+
+
+        <!-- Tree or List View -->
+        <record id="states_tree" model="ir.ui.view">
+            <field name="name">bank.states.tree</field>
+            <field name="model">bank.states</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <!--                    <field name="number"/>-->
+                    <field name="states_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="states_form" model="ir.ui.view">
+            <field name="name">bank.states.form</field>
+            <field name="model">bank.states</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <!--                            <group>-->
+                            <!--&lt;!&ndash;                                <field name="number" required="1"/>&ndash;&gt;-->
+                            <!--                            </group>-->
+                            <group>
+                                <field name="states_id" required="1"/>
+                            </group>
+                            <group>
+                                <!--									<group>-->
+                                <!--									<field name="localities_num" required="1"/>-->
+                                <!--								</group>-->
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="states_search" model="ir.ui.view">
+            <field name="name">bank.states.search</field>
+            <field name="model">bank.states</field>
+            <field name="arch" type="xml">
+                <search>
+                    <!--                    <field name="number"/>-->
+                    <field name="states_id"/>
+
+                </search>
+            </field>
+        </record>
+
+        <!--		gdhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh2-->
+
+
+        <record id="localities_action" model="ir.actions.act_window">
+            <field name="name">localities</field>
+            <field name="res_model">bank.localities</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="localities_tree" model="ir.ui.view">
+            <field name="name">bank.localities.tree</field>
+            <field name="model">bank.localities</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="states_id"/>
+                    <field name="localities_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="localities_form" model="ir.ui.view">
+            <field name="name">bank.localities.form</field>
+            <field name="model">bank.localities</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+
+                                <field name="states_id"/>
+                            </group>
+                            <group>
+                                <field name="localities_id" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="localities_search" model="ir.ui.view">
+            <field name="name">bank.localities.search</field>
+            <field name="model">bank.localities</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="states_id"/>
+                    <field name="localities_id"/>
+
+                </search>
+            </field>
+        </record>
+        <!--&lt;!&ndash;&lt;!&ndash;		end  &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;yuuuuuuuuuuuuuuuuuuuuuuuuucxfgxhggbxgf33&ndash;&gt;&ndash;&gt;-->
+
+        <record id="job_action" model="ir.actions.act_window">
+            <field name="name">Job</field>
+            <field name="res_model">bank.job</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="job_tree" model="ir.ui.view">
+            <field name="name">bank.job.tree</field>
+            <field name="model">bank.job</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="name_job"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="job_form" model="ir.ui.view">
+            <field name="name">bank.job.form</field>
+            <field name="model">bank.job</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <field name="name_job" required="1"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="job_search" model="ir.ui.view">
+            <field name="name">bank.job.search</field>
+            <field name="model">bank.job</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name_job"/>
+
+                </search>
+            </field>
+        </record>
+        <!--&lt;!&ndash;		&lt;!&ndash;		end  &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;ghhhhhhhhhhhhhhhhhhhhhh44444&ndash;&gt;&ndash;&gt;-->
+        <record id="customers_action" model="ir.actions.act_window">
+            <field name="name">customers</field>
+            <field name="res_model">bank.customers</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="customers_tree" model="ir.ui.view">
+            <field name="name">bank.customers.tree</field>
+            <field name="model">bank.customers</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="customer_id"/>
+                    <field name="name"/>
+                    <field name="phones"/>
+                    <field name="Gender"/>
+                    <field name="birth"/>
+                    <field name="address"/>
+                    <field name="job_id"/>
+                    <field name="social_state"/>
+                    <field name="states_id"/>
+                    <field name="localities_id"/>
+                    <field name="image"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="customers_form" model="ir.ui.view">
+            <field name="name">bank.customers.form</field>
+            <field name="model">bank.customers</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="image" widget="image" width="100px" height="100px"/>
+                            </group>
+                            <group>
+                                <field name="customer_id"/>
+                            </group>
+                            <group>
+                                <field name="name" required="1"/>
+                            </group>
+                            <group>
+                                <field name="phones" required="1"/>
+                            </group>
+                            <group>
+                                <field name="email" required="1"/>
+                            </group>
+                            <group>
+                                <field name="Gender" required="1"/>
+                            </group>
+                            <group>
+                                <field name="birth" required="1"/>
+                                <field name="age" required="1"/>
+                            </group>
+                            <group>
+                                <field name="address"/>
+                            </group>
+                            <group>
+                                <field name="job_id"/>
+                            </group>
+                            <group>
+                                <field name="social_state"/>
+                            </group>
+                            <group>
+                                <field name="states_id"/>
+                            </group>
+                            <group>
+                                <field name="localities_id"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="customers_search" model="ir.ui.view">
+            <field name="name">bank.customers.search</field>
+            <field name="model">bank.customers</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="customer_id"/>
+                    <field name="name"/>
+                    <field name="phones"/>
+                    <field name="Gender"/>
+                    <field name="birth"/>
+                    <field name="address"/>
+
+                </search>
+            </field>
+        </record>
+
+        <!-- Graph View -->
+
+        <!--&lt;!&ndash;&lt;!&ndash;		end&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;		&lt;!&ndash;yuuuuuuuuuuuuuuuuuuuuuuuuucxfgxhggbxgf5555&ndash;&gt;&ndash;&gt;-->
+
+        <record id="section_action" model="ir.actions.act_window">
+            <field name="name">section</field>
+            <field name="res_model">bank.section</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="section_tree" model="ir.ui.view">
+            <field name="name">bank.section.tree</field>
+            <field name="model">bank.section</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="name_section"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="section_form" model="ir.ui.view">
+            <field name="name">bank.section.form</field>
+            <field name="model">bank.section</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <field name="name_section" required="1"/>
+                        </group>
+                    </sheet>
+                    <div calss="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="section_search" model="ir.ui.view">
+            <field name="name">bank.section.search</field>
+            <field name="model">bank.section</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name_section"/>
+
+                </search>
+            </field>
+        </record>
+        <!--&lt;!&ndash;		&lt;!&ndash;		end  &ndash;&gt;&ndash;&gt;-->
+
+        <!--&lt;!&ndash;		&lt;!&ndash;yuuuuuuuuuuuuuuuuuuuuuuuuucxfgxhggbxgf6666666&ndash;&gt;&ndash;&gt;-->
+
+        <record id="activity_action" model="ir.actions.act_window">
+            <field name="name">activity</field>
+            <field name="res_model">bank.activity</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="activity_tree" model="ir.ui.view">
+            <field name="name">bank.activity.tree</field>
+            <field name="model">bank.activity</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="name_activity"/>
+                    <field name="name_section"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="activity_form" model="ir.ui.view">
+            <field name="name">bank.activity.form</field>
+            <field name="model">bank.activity</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="name_activity" required="1"/>
+                            </group>
+                            <group>
+                                <field name="name_section"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="activity_search" model="ir.ui.view">
+            <field name="name">bank.activity.search</field>
+            <field name="model">bank.activity</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name_activity"/>
+                    <field name="name_section"/>
+
+                </search>
+            </field>
+        </record>
+        <!--&lt;!&ndash;		&lt;!&ndash;		end  &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;		&lt;!&ndash;yuuuuuuuuuuuuuuuuuuuuuuuuucxfgxhggbxg77777777777&ndash;&gt;&ndash;&gt;-->
+        <record id="formula_action" model="ir.actions.act_window">
+            <field name="name">formula</field>
+            <field name="res_model">bank.formula</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="formula_tree" model="ir.ui.view">
+            <field name="name">bank.formula.tree</field>
+            <field name="model">bank.formula</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="name_formula"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="formula_form" model="ir.ui.view">
+            <field name="name">bank.formula.form</field>
+            <field name="model">bank.formula</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <field name="name_formula" required="1"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="formula_search" model="ir.ui.view">
+            <field name="name">bank.formula.search</field>
+            <field name="model">bank.formula</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name_formula"/>
+
+                </search>
+            </field>
+        </record>
+        <!--&lt;!&ndash;		&lt;!&ndash;		end  &ndash;&gt;&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash;		&lt;!&ndash;yuuuuuuuuuuuuuuuuuuuuuuuuucxfgxhggbxgf88888888&ndash;&gt;&ndash;&gt;-->
+        <record id="gurantee_action" model="ir.actions.act_window">
+            <field name="name">gurantee</field>
+            <field name="res_model">bank.gurantee</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="gurantee_tree" model="ir.ui.view">
+            <field name="name">bank.gurantee.tree</field>
+            <field name="model">bank.gurantee</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="name_gurantee"/>
+                    <field name="color"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="gurantee_form" model="ir.ui.view">
+            <field name="name">bank.gurantee.form</field>
+            <field name="model">bank.gurantee</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="name_gurantee" required="1"/>
+                            </group>
+                            <group>
+                                <field name="color"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="gurantee_search" model="ir.ui.view">
+            <field name="name">bank.gurantee.search</field>
+            <field name="model">bank.gurantee</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name_gurantee"/>
+                </search>
+            </field>
+        </record>
+        <!--&lt;!&ndash;		&lt;!&ndash;		end  &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;		&lt;!&ndash;yuuuuuuuuuuuuuuuuuuuuuuuuucxfgxhggbxgf9999999999999&ndash;&gt;&ndash;&gt;-->
+        <record id="rejection_reasons_action" model="ir.actions.act_window">
+            <field name="name">rejection_reasons</field>
+            <field name="res_model">bank.rejection_reasons</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="rejection_reasons_tree" model="ir.ui.view">
+            <field name="name">bank.rejection_reasons.tree</field>
+            <field name="model">bank.rejection_reasons</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="name_rejection_reasons"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="rejection_reasons_form" model="ir.ui.view">
+            <field name="name">bank.rejection_reasons.form</field>
+            <field name="model">bank.rejection_reasons</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <field name="name_rejection_reasons" required="1"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="rejection_reasons_search" model="ir.ui.view">
+            <field name="name">bank.rejection_reasons.search</field>
+            <field name="model">bank.rejection_reasons</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name_rejection_reasons"/>
+
+                </search>
+            </field>
+        </record>
+        <!--&lt;!&ndash;		&lt;!&ndash;		end  &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;		&lt;!&ndash;yuuuuuuuuuuuuuuuuuuuuuuuuucxfgxhggbxgf10101010101010&ndash;&gt;&ndash;&gt;-->
+        <record id="stumbling_reasons_action" model="ir.actions.act_window">
+            <field name="name">stumbling_reasons</field>
+            <field name="res_model">bank.stumbling_reasons</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="stumbling_reasons_tree" model="ir.ui.view">
+            <field name="name">bank.stumbling_reasons.tree</field>
+            <field name="model">bank.stumbling_reasons</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="name_stumbling_reasons"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="stumbling_reasons_form" model="ir.ui.view">
+            <field name="name">bank.stumbling_reasons.form</field>
+            <field name="model">bank.stumbling_reasons</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="name_stumbling_reasons" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="stumbling_reasons_search" model="ir.ui.view">
+            <field name="name">bank.stumbling_reasons.search</field>
+            <field name="model">bank.stumbling_reasons</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name_stumbling_reasons"/>
+
+                </search>
+            </field>
+        </record>
+        <!--&lt;!&ndash;		&lt;!&ndash;		end  &ndash;&gt;&ndash;&gt;-->
+        <record id="judges_action" model="ir.actions.act_window">
+            <field name="name">judges</field>
+            <field name="res_model">bank.judges</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="judges_tree" model="ir.ui.view">
+            <field name="name">bank.judges.tree</field>
+            <field name="model">bank.judges</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="name_judges"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="judges_form" model="ir.ui.view">
+            <field name="name">bank.judges.form</field>
+            <field name="model">bank.judges</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="name_judges" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="judges_search" model="ir.ui.view">
+            <field name="name">bank.judges.search</field>
+            <field name="model">bank.judges</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name_judges"/>
+
+                </search>
+            </field>
+        </record>
+
+        <!--&lt;!&ndash;		&lt;!&ndash;yuuuuuuuuuuuuuuuuuuuuuuuuucxfgxhggbxgf1111111111111111&ndash;&gt;&ndash;&gt;-->
+        <record id="courts_action" model="ir.actions.act_window">
+            <field name="name">courts</field>
+            <field name="res_model">bank.courts</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="courts_tree" model="ir.ui.view">
+            <field name="name">bank.courts.tree</field>
+            <field name="model">bank.courts</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="name_courts"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="courts_form" model="ir.ui.view">
+            <field name="name">bank.courts.form</field>
+            <field name="model">bank.courts</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="name_courts" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="courts_search" model="ir.ui.view">
+            <field name="name">bank.courts.search</field>
+            <field name="model">bank.courts</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name_courts"/>
+
+                </search>
+            </field>
+        </record>
+        <!--		&lt;!&ndash;		end  &ndash;&gt;-->
+
+        <!--		&lt;!&ndash;yuuuuuuuuuuuuuuuuuuuuuuuuucxfgxhggbxgf1212121221212212121&ndash;&gt;-->
+
+
+        <!--Transaction view-->
+        <record id="job_detalls_action" model="ir.actions.act_window">
+            <field name="name">job_detalls</field>
+            <field name="res_model">bank.job_detalls</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="job_detalls_tree" model="ir.ui.view">
+            <field name="name">bank.job_detalls.tree</field>
+            <field name="model">bank.job_detalls</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="customer_id"/>
+                    <field name="job_date"/>
+                    <field name="job_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Form View -->
+        <record id="job_detalls_form" model="ir.ui.view">
+            <field name="name">bank.job_detalls.form</field>
+            <field name="model">bank.job_detalls</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="customer_id"/>
+                            </group>
+                            <group>
+                                <field name="job_date"/>
+                            </group>
+                            <group>
+                                <field name="job_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--		sdfghjkl;pkjuytrewsedfghjk-->
+
+        <record id="social_state_action" model="ir.actions.act_window">
+            <field name="name">social_state</field>
+            <field name="res_model">bank.social_state</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="social_state_tree" model="ir.ui.view">
+            <field name="name">bank.social_state.tree</field>
+            <field name="model">bank.social_state</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="customer_id"/>
+                    <field name="state_date"/>
+                    <field name="social_state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="social_state_form" model="ir.ui.view">
+            <field name="name">bank.social_state.form</field>
+            <field name="model">bank.social_state</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="customer_id"/>
+                            </group>
+                            <group>
+                                <field name="state_date"/>
+                            </group>
+                            <group>
+                                <field name="social_state"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--		Request-->
+
+        <record id="finance_request_action" model="ir.actions.act_window">
+            <field name="name">Request</field>
+            <field name="res_model">bank.finance_request</field>
+            <field name="view_mode">tree,form,graph,kanban,pivot,calendar</field>
+        </record>
+
+
+        <!--        Tree or List View-->
+        <record id="finance_request_tree" model="ir.ui.view">
+            <field name="name">bank.finance_request.tree</field>
+            <field name="model">bank.finance_request</field>
+            <field name="arch" type="xml">
+                <tree string="Idea Categories" decoration-success="state=='accept'"
+                      decoration-danger="state=='cancel'">
+
+                    <field name="sequence"/>
+                    <field name="requer_num"/>
+                    <field name="req_date"/>
+                    <field name="customer_id"/>
+                    <field name="customer_name"/>
+                    <field name="customer_phone"/>
+                    <field name="fin_type"/>
+                    <field name="name_section"/>
+                    <field name="name_activity"/>
+                    <field name="for_number"/>
+                    <field name="req_amount"/>
+                    <field name="Gurantee_ids" widget="many2many_tags" options="{'color_field': 'color'} "/>
+                    <field name="customer_image"/>
+                    <field name="customer_name"/>
+                    <field name="customer_phone"/>
+                    <field name="amount_cert"/>
+                    <field name="reason"/>
+                    <field name="state" widget="statusbar" statusbar_visible="accept,cancel" invisible="1"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="view_state_share_graph">
+            <field name="name">state.share.graph</field>
+            <field name="model">bank.states</field>
+            <field name="arch" type="xml">
+                <graph string="State Share" sample="1">
+                    <field name="states_id"/>
+                    <field name="state_share" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_localities_share_graph">
+            <field name="name">locality.share.graph</field>
+            <field name="model">bank.localities</field>
+            <field name="arch" type="xml">
+                <graph string="Locality Share" sample="1">
+                    <field name="localities_id"/>
+                    <field name="locality_share" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_finance_share_graph">
+            <field name="name">finance.share.graph</field>
+            <field name="model">bank.finance_request</field>
+            <field name="arch" type="xml">
+                <graph string="Finance Share" sample="1">
+                    <field name="fin_type"/>
+                    <field name="finance_share" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_section_share_graph">
+            <field name="name">section.share.graph</field>
+            <field name="model">bank.section</field>
+            <field name="arch" type="xml">
+                <graph string="section Share" sample="1">
+                    <field name="name_section"/>
+                    <field name="section_share" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="finance_request_kanban_view" model="ir.ui.view">
+            <field name="name">bank.finance_request.kanban</field>
+            <field name="model">bank.finance_request</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                    <field name="requer_num"/>
+                    <field name="customer_id"/>
+                    <field name="customer_name"/>
+                    <field name="customer_image"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img alt="Avatar"
+                                         t-att-src="kanban_image()"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <p>Requer Namber:
+                                            <field name="requer_num"/>
+                                        </p>
+                                    </strong>
+                                    <div>
+                                        <!--                                        <t t-esc=""/>-->
+                                        <p>Customer Id:
+                                            <field name="customer_id"/>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <!--                                        <t t-esc=""/>-->
+                                        <p>Customer Name:
+                                            <field name="customer_name"/>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!--         FormView-->
+        <record id="finance_request_form" model="ir.ui.view">
+            <field name="name">bank.finance_request.form</field>
+            <field name="model">bank.finance_request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_accept" string='Accept' state="accept" class="oe_highlight" type="object"
+                                attrs="{'invisible':[('state','!=','draft')]}"/>
+                        <button name="action_cancel" string="Decline" state="cancel" class="oe_highlight" type="object"
+                                attrs="{'invisible':[('state','!=','draft')]}"/>
+                        <field name="state" widget="statusbar" statusbar_visible="accept,cancel,draft"/>
+                    </header>
+                    <sheet>
+
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="requer_num"/>
+                                <field name="req_date"/>
+                                <field name="customer_id"/>
+                                <field name="fin_type" required="1"/>
+
+                            </group>
+                            <group>
+                                <field name="name_section"/>
+                                <field name="name_activity"/>
+                                <field name="for_number"/>
+                                <field name="req_amount"/>
+                                <field name="Gurantee_ids" widget="many2many_tags" options="{'color_field': 'color'} "/>
+                                <field name="amount_cert" attrs="{'invisible':[('state','!=','accept')]}"/>
+                                <field name="date_certified" attrs="{'invisible':[('state','!=','accept')]}"/>
+                                <field name="reason" attrs="{'invisible':[('state','!=','cancel')]}"/>
+
+                            </group>
+
+
+                        </group>
+
+                        <notebook>
+                            <page string="customer">
+                                <group>
+                                    <group>
+                                        <field name="customer_image" widget="image" width="80px" height="80px"/>
+                                    </group>
+                                    <group>
+                                        <field name="customer_name"/>
+                                        <field name="customer_phone"/>
+                                    </group>
+
+                                </group>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="finance_request_graph" model="ir.ui.view">
+            <field name="name">bank.finance_request.graph</field>
+            <field name="model">bank.finance_request</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <field name="requer_num"/>
+                    <field name="customer_id"/>
+                    <field name="req_amount"/>
+                </graph>
+            </field>
+        </record>
+        <!-- Pivot View -->
+        <record id="finance_request_pivot" model="ir.ui.view">
+            <field name="name">bank.finance_request.pivot</field>
+            <field name="model">bank.finance_request</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="customer_name"/>
+                    <field name="req_amount"/>
+                    <field name="requer_num"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="request_calendar" model="ir.ui.view">
+            <field name="name">bank.finance_request.calendar</field>
+            <field name="model">bank.finance_request</field>
+            <field name="arch" type="xml">
+                <calendar date_start="req_date" color="requer_num">
+                    <field name="requer_num"/>
+                    <field name="req_amount"/>
+                </calendar>
+            </field>
+        </record>
+        <!-- search -->
+        <record id="finance_request_search" model="ir.ui.view">
+            <field name="name">bank.finance_request.search</field>
+            <field name="model">bank.finance_request</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="requer_num"/>
+                    <field name="req_date"/>
+                    <field name="customer_id"/>
+                    <field name="customer_name"/>
+                    <field name="customer_phone"/>
+                    <field name="fin_type"/>
+                    <field name="name_section"/>
+                    <field name="name_activity"/>
+                    <field name="for_number"/>
+                    <field name="req_amount"/>
+                    <field name="Gurantee_ids"/>
+                    <field name="customer_image"/>
+                    <field name="customer_name"/>
+                    <field name="customer_phone"/>
+                    <field name="amount_cert"/>
+                    <field name="reason"/>
+
+
+                </search>
+            </field>
+        </record>
+
+
+        <!--		first_payments_customers-->
+
+        <record id="first_payments_customers_action" model="ir.actions.act_window">
+            <field name="name">First Payments Customers</field>
+            <field name="res_model">bank.first_payments_customers</field>
+            <field name="view_mode">tree,form,kanban,graph,pivot</field>
+        </record>
+
+        <record id="first_payments_customers_search" model="ir.ui.view">
+            <field name="name">bank.first_payments_customers.search</field>
+            <field name="model">bank.first_payments_customers</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="number"/>
+
+
+                </search>
+            </field>
+        </record>
+        <record id="first_payments_customers_pivot" model="ir.ui.view">
+            <field name="name">bank.first_payments_customers.pivot</field>
+            <field name="model">bank.first_payments_customers</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <!--                    <field name="customer_name"/>-->
+                    <!--                    <field name="req_amount"/>-->
+                    <!--                    <field name="requer_num"/>-->
+                </pivot>
+            </field>
+        </record>
+
+        <record id="first_payments_customers_kanban_view" model="ir.ui.view">
+            <field name="name">bank.first_payments_customers.kanban</field>
+            <field name="model">bank.first_payments_customers</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                    <field name="number"/>
+                    <field name="request_date"/>
+                    <field name="advance_amount"/>
+                    <field name="advance_date"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <div>
+                                            <field name="number"/>
+                                            <field name="request_date"/>
+                                        </div>
+                                        <div>
+                                            <field name="advance_amount"/>
+                                            <field name="advance_date"/>
+                                        </div>
+                                        <div>
+                                            <field name="rem_amount"/>
+                                        </div>
+
+                                    </strong>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="first_payments_customers_graph" model="ir.ui.view">
+            <field name="name">bank.first_payments_customers.graph</field>
+            <field name="model">bank.first_payments_customers</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <field name="number"/>
+                    <field name="advance_amount"/>
+                    <field name="rem_amount"/>
+                </graph>
+            </field>
+        </record>
+
+
+        <!-- Tree or List View -->
+        <record id="first_payments_customers_tree" model="ir.ui.view">
+            <field name="name">bank.first_payments_customers.tree</field>
+            <field name="model">bank.first_payments_customers</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="number"/>
+                    <field name="request_date"/>
+                    <field name="advance_amount"/>
+                    <field name="advance_date"/>
+                    <field name="rem_amount"/>
+                    <!--					<field name="remaining_amount"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="first_payments_customers_form" model="ir.ui.view">
+            <field name="name">bank.first_payments_customers.form</field>
+            <field name="model">bank.first_payments_customers</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="number"/>
+                                <field name="request_date"/>
+                            </group>
+                            <group>
+                                <field name="advance_date"/>
+                                <field name="advance_amount"/>
+                            </group>
+
+                        </group>
+                        <group>
+                            <field name="amount_cert"/>
+                            <field name="rem_amount"/>
+
+                        </group>
+                    </sheet>
+                    <div calss="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--sdfghjkl;ljh-->
+
+        <record id="transaction_installments_action" model="ir.actions.act_window">
+            <field name="name">Transaction Installments</field>
+            <field name="res_model">bank.transaction_installments</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+        </record>
+
+        <record id="transaction_installments_graph" model="ir.ui.view">
+            <field name="name">bank.transaction_installments.graph</field>
+            <field name="model">bank.transaction_installments</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <field name="install_ids">
+                        <!-- <tree editable="down">
+                            <field name="install_num"/>
+                            <field name="pre_date"/>
+                            <field name="install_amount"/>
+                            <field name="paid_amount" readonly="1"/>
+                            <field name="remaining_amount" force_save="1"/>
+                            <field name="paid" readonly="1"/>
+                            <field name="sum_paid_amount"/>
+                        </tree editable="down"> -->
+                    </field>
+                </graph>
+            </field>
+        </record>
+
+        <!-- pivot  View -->
+        <record id="transaction_installments_pivot" model="ir.ui.view">
+            <field name="name">bank.transaction_installments.pivot</field>
+            <field name="model">bank.transaction_installments</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="requer_num"/>
+                    <field name="amount"/>
+                    <field name="payment_date"/>
+                    <field name="req_date"/>
+                    <field name="installment"/>
+                    <!--                    <field name="install_ids"></field>-->
+                    <field name="install_ids">
+                        <tree editable="down">
+                            <field name="install_num"/>
+                            <field name="pre_date"/>
+                            <field name="install_amount"/>
+                            <field name="paid_amount" readonly="1"/>
+                            <field name="remaining_amount" force_save="1"/>
+                            <field name="paid" readonly="1"/>
+                        </tree>
+                    </field>
+
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="transaction_installments_tree" model="ir.ui.view">
+            <field name="name">bank.transaction_installments.tree</field>
+            <field name="model">bank.transaction_installments</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="requer_num"/>
+                    <field name="req_date"/>
+                    <!--					<field name="install_num"/>-->
+                    <!--					<field name="pre_date"/>-->
+                    <!--					<field name="install_amount"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="transaction_installments_form" model="ir.ui.view">
+            <field name="name">bank.transaction_installments.form</field>
+            <field name="model">bank.transaction_installments</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="compute_installment" type="object" string="Compute Installment"
+                                class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="requer_num"/>
+                                <field name="amount"/>
+                                <field name="payment_date"/>
+                            </group>
+                            <group>
+                                <field name="req_date"/>
+                                <field name="installment"/>
+<!--                                <field name="filter_date"/>-->
+                            </group>
+
+                        </group>
+                        <notebook>
+                            <page string="Installmentss">
+                                <field name="install_ids">
+                                    <tree editable="down">
+                                        <field name="install_num"/>
+                                        <field name="pre_date"/>
+                                        <field name="install_amount"/>
+                                        <field name="paid_amount" readonly="1"/>
+                                        <field name="remaining_amount" force_save="1"/>
+                                        <field name="paid" readonly="1"/>
+                                        <!--                                        <field name="sum_paid_amount"/>-->
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <group>
+                            <field name="sum_paid_amount"/>
+                            <field name="sum_remaining_amount"/>
+                        </group>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--		installments_payments-->
+
+        <record id="installments_action" model="ir.actions.act_window">
+            <field name="name">Installments</field>
+            <field name="res_model">bank.installments</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+        </record>
+
+        <record id="installments_graph" model="ir.ui.view">
+            <field name="name">bank.installments.graph</field>
+            <field name="model">bank.installments</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <!--                    <field name="number"/>-->
+                    <!--                    <field name="advance_amount"/>-->
+                    <!--                    <field name="rem_amount"/>-->
+                </graph>
+            </field>
+        </record>
+
+        <!-- pivot  View -->
+        <record id="installments_pivot" model="ir.ui.view">
+            <field name="name">bank.installments.pivot</field>
+            <field name="model">bank.installments</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <!--                    <field name="customer_name"/>-->
+                    <!--                    <field name="req_amount"/>-->
+                    <!--                    <field name="requer_num"/>-->
+                </pivot>
+            </field>
+        </record>
+
+
+        <record id="installments_payments_action" model="ir.actions.act_window">
+            <field name="name">Installments Payments</field>
+            <field name="res_model">bank.installments_payments</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+        </record>
+
+        <record id="installments_payments_graph" model="ir.ui.view">
+            <field name="name">bank.installments_payments.graph</field>
+            <field name="model">bank.installments_payments</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <!--                    <field name="number"/>-->
+                    <!--                    <field name="advance_amount"/>-->
+                    <!--                    <field name="rem_amount"/>-->
+                </graph>
+            </field>
+        </record>
+
+        <!-- pivot  View -->
+        <record id="installments_payments_pivot" model="ir.ui.view">
+            <field name="name">bank.installments_payments.pivot</field>
+            <field name="model">bank.installments_payments</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <!--                    <field name="customer_name"/>-->
+                    <!--                    <field name="req_amount"/>-->
+                    <!--                    <field name="requer_num"/>-->
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="installments_payments_tree" model="ir.ui.view">
+            <field name="name">bank.installments_payments.tree</field>
+            <field name="model">bank.installments_payments</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="requer_ids"/>
+                    <field name="req_date"/>
+                    <field name="install_num"/>
+                    <field name="pay_date"/>
+                    <field name="pay_amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="installments_payments_form" model="ir.ui.view">
+            <field name="name">bank.installments_payments.form</field>
+            <field name="model">bank.installments_payments</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="requer_ids"/>
+                                <field name="req_date"/>
+                                <field name="create_date" string="Pay Date"/>
+
+                                <field name="install_num"/>
+                            </group>
+                            <group>
+                                <field name="pay_date"/>
+                                <field name="amout_install"/>
+                                <field name="pay_amount"/>
+                            </group>
+                            <group>
+                                <field name="rem_amount"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--		stumbling-->
+
+        <record id="stumbling_action" model="ir.actions.act_window">
+            <field name="name">Stumbling</field>
+            <field name="res_model">bank.stumbling</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+        </record>
+
+        <record id="stumbling_graph" model="ir.ui.view">
+            <field name="name">bank.stumbling.graph</field>
+            <field name="model">bank.stumbling</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <!--                    <field name="number"/>-->
+                    <!--                    <field name="advance_amount"/>-->
+                    <!--                    <field name="rem_amount"/>-->
+                </graph>
+            </field>
+        </record>
+
+
+        <!-- pivot  View -->
+        <record id="stumbling_pivot" model="ir.ui.view">
+            <field name="name">bank.stumbling.pivot</field>
+            <field name="model">bank.stumbling</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <!--                    <field name="customer_name"/>-->
+                    <!--                    <field name="req_amount"/>-->
+                    <!--                    <field name="requer_num"/>-->
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="stumbling_tree" model="ir.ui.view">
+            <field name="name">bank.stumbling.tree</field>
+            <field name="model">bank.stumbling</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="requer_number"/>
+                    <field name="req_date"/>
+                    <field name="stumb_amount"/>
+                    <field name="stumb_num"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="stumbling_form" model="ir.ui.view">
+            <field name="name">bank.stumbling.form</field>
+            <field name="model">bank.stumbling</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button type="object" name="action_stumbling" string="transmit to low mangement "
+                                class="btn-primary"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="requer_number"/>
+                                <field name="req_date"/>
+                            </group>
+                            <group>
+                                <field name="stumb_amount"/>
+                                <field name="stumb_num"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--		transmit_to_low_mangement-->
+
+        <record id="transmit_to_low_mangement_action" model="ir.actions.act_window">
+            <field name="name">Transmit To Low Mangement</field>
+            <field name="res_model">bank.transmit_to_low_mangement</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+        </record>
+
+        <!-- graph  View -->
+
+        <record id="transmit_to_low_mangement_graph" model="ir.ui.view">
+            <field name="name">bank.transmit_to_low_mangement.graph</field>
+            <field name="model">bank.transmit_to_low_mangement</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <!--                    <field name="number"/>-->
+                    <!--                    <field name="advance_amount"/>-->
+                    <!--                    <field name="rem_amount"/>-->
+                </graph>
+            </field>
+        </record>
+
+
+        <!-- pivot  View -->
+        <record id="transmit_to_low_mangement_pivot" model="ir.ui.view">
+            <field name="name">bank.transmit_to_low_mangement.pivot</field>
+            <field name="model">bank.transmit_to_low_mangement</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <!--                    <field name="customer_name"/>-->
+                    <!--                    <field name="req_amount"/>-->
+                    <!--                    <field name="requer_num"/>-->
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="transmit_to_low_mangement_tree" model="ir.ui.view">
+            <field name="name">bank.transmit_to_low_mangement.tree</field>
+            <field name="model">bank.transmit_to_low_mangement</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="requer_numb"/>
+                    <field name="req_date"/>
+                    <field name="tran_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="transmit_to_low_mangement_form" model="ir.ui.view">
+            <field name="name">bank.transmit_to_low_mangement.form</field>
+            <field name="model">bank.transmit_to_low_mangement</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                        <button type="object" name="action_Reschedule" string="Reschedule"
+                                class="btn-primary"/>
+                        <button type="object" name="action_transmit_to_court" string="Transmit To Court"
+                                class="btn-primary"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="requer_numb"/>
+                                <field name="req_date"/>
+                            </group>
+                            <group>
+                                <field name="tran_date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--		Reschedule-->
+
+        <record id="reschedule_action" model="ir.actions.act_window">
+            <field name="name">Reschedule</field>
+            <field name="res_model">bank.rescheduled</field>
+            <field name="view_mode">tree,form,graph,pivot</field>
+        </record>
+
+        <!-- graph  View -->
+
+        <record id="rescheduled_graph" model="ir.ui.view">
+            <field name="name">bank.rescheduled.graph</field>
+            <field name="model">bank.rescheduled</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <!--                    <field name="number"/>-->
+                    <!--                    <field name="advance_amount"/>-->
+                    <!--                    <field name="rem_amount"/>-->
+                </graph>
+            </field>
+        </record>
+
+
+        <!-- pivot  View -->
+        <record id="rescheduled_pivot" model="ir.ui.view">
+            <field name="name">bank.rescheduled.pivot</field>
+            <field name="model">bank.rescheduled</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <!--                    <field name="customer_name"/>-->
+                    <!--                    <field name="req_amount"/>-->
+                    <!--                    <field name="requer_num"/>-->
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="reschedule_tree" model="ir.ui.view">
+            <field name="name">bank.rescheduled.tree</field>
+            <field name="model">bank.rescheduled</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="requer_num"/>
+                    <field name="req_date"/>
+                    <!--					<field name="install_num"/>-->
+                    <!--					<field name="pay_date"/>-->
+                    <!--					<field name="new_pre_date"/>-->
+                    <!--					<field name="amount"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="reschedule_form" model="ir.ui.view">
+            <field name="name">bank.rescheduled.form</field>
+            <field name="model">bank.rescheduled</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="requer_num"/>
+                                <field name="amount_rescheduled"/>
+                            </group>
+                            <group>
+                                <field name="req_date"/>
+                                <field name="rescheduled_date"/>
+                            </group>
+
+                        </group>
+                        <notebook>
+                            <page string="schedule install">
+                                <field name="install_reschedule_number">
+                                    <tree editable="down">
+                                        <field name="install_num"/>
+                                        <field name="pay_date"/>
+                                        <field name="new_pre_date"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--		transmit_to_court-->
+
+        <record id="transmit_to_court_action" model="ir.actions.act_window">
+            <field name="name">Transmit To Court</field>
+            <field name="res_model">bank.transmit_to_court</field>
+            <field name="view_mode">tree,form,graph,pivot</field>
+        </record>
+
+        <!-- graph  View -->
+
+        <record id="transmit_to_court_graph" model="ir.ui.view">
+            <field name="name">bank.transmit_to_court.graph</field>
+            <field name="model">bank.transmit_to_court</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <!--                    <field name="number"/>-->
+                    <!--                    <field name="advance_amount"/>-->
+                    <!--                    <field name="rem_amount"/>-->
+                </graph>
+            </field>
+        </record>
+
+
+        <!-- pivot  View -->
+        <record id="transmit_to_court_pivot" model="ir.ui.view">
+            <field name="name">bank.transmit_to_court.pivot</field>
+            <field name="model">bank.transmit_to_court</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <!--                    <field name="customer_name"/>-->
+                    <!--                    <field name="req_amount"/>-->
+                    <!--                    <field name="requer_num"/>-->
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Tree or List View -->
+        <record id="transmit_to_court_tree" model="ir.ui.view">
+            <field name="name">bank.transmit_to_court.tree</field>
+            <field name="model">bank.transmit_to_court</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="requer_num"/>
+                    <field name="req_date"/>
+                    <field name="tran_to_court_date"/>
+                    <field name="cout_numb"/>
+                    <field name="judg_number"/>
+                    <field name="court_deci"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="transmit_to_court_form" model="ir.ui.view">
+            <field name="name">bank.transmit_to_court.form</field>
+            <field name="model">bank.transmit_to_court</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="sequence" readonly="True"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="requer_num"/>
+                                <field name="req_date"/>
+                                <field name="tran_to_court_date"/>
+                            </group>
+                            <group>
+                                <field name="cout_numb"/>
+                                <field name="judg_number"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="court_deci" required="1"/>
+                            </group>
+                            <group>
+                                <field name="file" required="1"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--		end  -->
+        <menuitem
+                id="root_menu"
+                name="Investment Management"
+                action="imag_action_s"/>
+
+        />
+
+
+        <menuitem
+                id="mean_menu"
+                name="bank "
+                action=""
+                parent="root_menu"/>
+
+
+        <menuitem
+                id="Reverenced_menu"
+                name="General Forms"
+                action=""
+                parent="root_menu"
+        />
+
+
+        <menuitem
+                id="state_menu"
+                name="States"
+                parent="Reverenced_menu"
+                action="bank_action_s"/>
+
+
+        <menuitem
+                id="localities_menu"
+                name="Localities"
+                action="localities_action"
+                parent="Reverenced_menu"/>
+        <!--&lt;!&ndash;&lt;!&ndash;		Job &ndash;&gt;&ndash;&gt;-->
+        <menuitem
+                id="job_menu"
+                name="Jobs"
+                action="job_action"
+                parent="Reverenced_menu"/>
+        <!--&lt;!&ndash;&lt;!&ndash;		customers&ndash;&gt;&ndash;&gt;-->
+        <menuitem
+                id="customers_menu"
+                name="Customers"
+                action="customers_action"
+                parent="Reverenced_menu"/>
+        <menuitem
+                id="section_menu"
+                name="Section"
+                action="section_action"
+                parent="Reverenced_menu"/>
+        <menuitem
+                id="activity_menu"
+                name="Activity"
+                action="activity_action"
+                parent="Reverenced_menu"/>
+        <menuitem
+                id="formula_menu"
+                name="Formula"
+                action="formula_action"
+                parent="Reverenced_menu"/>
+        <menuitem
+                id="gurantee_menu"
+                name="Gurantee"
+                action="gurantee_action"
+                parent="Reverenced_menu"/>
+        <menuitem
+                id="rejection_reasons_menu"
+                name="Rejection Reasons"
+                action="rejection_reasons_action"
+                parent="Reverenced_menu"/>
+        <menuitem
+                id="stumbling_reasons_menu"
+                name="Stumbling Reasons"
+                action="stumbling_reasons_action"
+                parent="Reverenced_menu"/>
+        <menuitem
+                id="judges_menu"
+                name="Judges"
+                action="judges_action"
+                parent="Reverenced_menu"/>
+
+
+        <!--&lt;!&ndash;courts&ndash;&gt;-->
+        <menuitem
+                id="courts_menu"
+                name="Courts"
+                action="courts_action"
+                parent="Reverenced_menu"/>
+
+
+        <menuitem
+                id="transaction_menu"
+                name="Transaction"
+                action=""
+                parent="root_menu"/>
+
+        <menuitem
+                id="job_detalls_menue"
+                name="Jobs Details"
+                action="job_detalls_action"
+                parent="transaction_menu"/>
+
+        <menuitem
+                id="social_state_menue"
+                name="Social State"
+                action="social_state_action"
+                parent="transaction_menu"/>
+        <menuitem
+                id="Request_menu"
+                name="Request"
+                action="finance_request_action"
+                parent="root_menu"/>
+
+        <menuitem
+                id="Installments_menue_main"
+                name="Installments "
+                action=""
+                parent="root_menu"/>
+
+        <menuitem
+                id="first_payments_customers_menue"
+                name="First Payments Customers "
+                action="first_payments_customers_action"
+                parent="Installments_menue_main"/>
+
+        <menuitem
+                id="transaction_installments_menue"
+                name="Transaction Installments"
+                action="transaction_installments_action"
+                parent="Installments_menue_main"/>
+        <menuitem
+                id="installments_menue"
+                name="Installments"
+                action="installments_action"
+                parent="Installments_menue_main"/>
+
+        <menuitem
+                id="installments_payments_menue"
+                name="Installments Payments"
+                action="installments_payments_action"
+                parent="Installments_menue_main"/>
+
+        <!--		stumbling-->
+        <menuitem
+                id="stumbling_menue"
+                name="Stumbling"
+                action="stumbling_action"
+                parent="transaction_menu"/>
+
+        <!--		transmit_to_low_mangement-->
+        <menuitem
+                id="transmit_to_low_mangement_menue"
+                name="Transmit To Low Management"
+                action="transmit_to_low_mangement_action"
+                parent="transaction_menu"/>
+
+        <!--		reschedule-->
+        <menuitem
+                id="reschedule_menue"
+                name="Reschedule"
+                action="reschedule_action"
+                parent="transaction_menu"/>
+
+        <!--		transmit_to_court-->
+        <menuitem
+                id="transmit_to_court_menue"
+                name="Transmit To Courts"
+                action="transmit_to_court_action"
+                parent="transaction_menu"/>
+
+        <!--Report-->
+
+
+        <menuitem
+                id="reporting_menu_statistic"
+                name="Reporting Statistic"
+                parent="root_menu"
+        />
+
+        <menuitem
+                id="finance_on_states_menu"
+                name="Finance On States Report"
+                action="finance_on_states_report_wizard_action"
+                parent="reporting_menu_statistic"/>
+
+<!--        <menuitem-->
+<!--                id="finance_on_localities_template_menu"-->
+<!--                name="Finance On Localities Report"-->
+<!--                action="finance_on_localities_report_wizard_action"-->
+<!--                parent="reporting_menu_statistic"/>-->
+
+<!--        <menuitem-->
+<!--                id="finance_on_finance_type_report_menu"-->
+<!--                name="Finance On Finance Type"-->
+<!--                action="finance_on_finance_type_report_wizard_action"-->
+<!--                parent="reporting_menu_statistic"/>-->
+
+
+
+
+        <menuitem
+                id="operations_rescheduling_report_menu"
+                name="Operations Rescheduling Report"
+                action="operations_rescheduling_report_wizard_action"
+                parent="reporting_menu_statistic"/>
+
+<!--        <menuitem-->
+<!--                id="operations_rescheduling_on_finance_type_report_menu"-->
+<!--                name="Operations Rescheduling On Finance Type Report"-->
+<!--                action="operations_rescheduling_on_finance_type_report_wizard_action"-->
+<!--                parent="reporting_menu_statistic"/>-->
+
+<!--        <menuitem-->
+<!--                id="operations_rescheduling_on_section_report_action_menu"-->
+<!--                name="Operations Rescheduling On Section Report"-->
+<!--                action="operations_rescheduling_on_section_report_wizard_action"-->
+<!--                parent="reporting_menu_statistic"/>-->
+
+<!--        <menuitem-->
+<!--                id="operations_rescheduling_on_activ_report_menu"-->
+<!--                name="Operations Rescheduling On Activity Report"-->
+<!--                action="operations_rescheduling_on_activ_report_wizard_action"-->
+<!--                parent="reporting_menu_statistic"/>-->
+
+<!--        <menuitem-->
+<!--                id="operations_rescheduling_on_formula_report_menu"-->
+<!--                name="Operations Rescheduling On Formula Report"-->
+<!--                parent="reporting_menu_statistic"-->
+<!--                action="operations_rescheduling_on_formula_report_wizard_action"-->
+
+<!--        />-->
+
+        <menuitem
+                id="operations_stumbleds_report_menu"
+                name="Operations Stumbleds Report"
+                parent="reporting_menu_statistic"
+                action="operations_stumbleds_report_wizard_action"
+
+        />
+
+<!--        <menuitem-->
+<!--                id="operations_stumbleds_on_finance_type_report_menu"-->
+<!--                name="Operations Stumbleds On Finance Type Report"-->
+<!--                parent="reporting_menu_statistic"-->
+<!--                action="operations_stumbleds_on_finance_type_wizard_action"-->
+
+<!--        />-->
+
+<!--        <menuitem-->
+<!--                id="operations_stumbleds_on_section_report_menu"-->
+<!--                name="Operations Stumbleds On Section Report"-->
+<!--                parent="reporting_menu_statistic"-->
+<!--                action="operations_stumbleds_on_section_wizard_action"-->
+
+<!--        />-->
+
+<!--        <menuitem-->
+<!--                id="operations_stumbleds_on_activity_report_menu"-->
+<!--                name="Operations Stumbleds On Activity Report"-->
+<!--                parent="reporting_menu_statistic"-->
+<!--                action="operations_stumbleds_on_activity_wizard_action"-->
+
+<!--        />-->
+
+<!--        <menuitem-->
+<!--                id="operations_stumbleds_on_formula_report_menu"-->
+<!--                name="Operations Stumbleds On Formula Report"-->
+<!--                parent="reporting_menu_statistic"-->
+<!--                action="operations_stumbleds_on_formula_wizard_action"-->
+
+<!--        />-->
+
+        <menuitem
+                id="operations_trans_to_management_law_report_menu"
+                name="Operations Transform To Management Law Report"
+                parent="reporting_menu_statistic"
+                action="operat_trans_to_manag_law_report_wizard_action"
+        />
+
+        <!--        <menuitem-->
+        <!--                id="operations_stansferred_to_the_courts_report_menu"-->
+        <!--                name="Operations Stansferred To The Courts Report"-->
+        <!--                parent="reporting_menu_statistic"-->
+        <!--                action="operations_stansferred_to_the_courts_wizard_action-->
+        <!--        "/>-->
+
+        <menuitem
+                id="reporting_menu"
+                name="Reporting"
+                parent="root_menu"
+        />
+        <menuitem
+                id="reporting_requestes_menu"
+                name="Reporting Requestes"
+                parent="reporting_menu"
+        />
+
+
+
+        <menuitem
+                id="finances_requestes_report_menu"
+                name="Finance Request Report"
+                parent="reporting_requestes_menu"
+                action="finances_requestes_report_wizard_action"
+        />
+
+
+        <menuitem
+                id="reporting_Approved_requestes_menu"
+                name="Reporting Approved Requestes "
+                parent="reporting_menu"
+        />
+
+        <menuitem
+                id="approved_requestes_report_menu"
+                name="Approved Request "
+                parent="reporting_Approved_requestes_menu"
+                action="approved_requestes_report_wizard_action"
+        />
+
+
+
+        <menuitem
+                id="reporting_rejection_requestes_menu"
+                name="Reporting rejection Requestes "
+                parent="reporting_menu"
+        />
+        <menuitem
+                id="rejection_requestes_report_menu"
+                name="rejection Request Report"
+                parent="reporting_rejection_requestes_menu"
+                action="rejection_requestes_report_wizard_action"
+        />
+
+
+        <menuitem
+                id="reporting_Installments_menu"
+                name="reporting Installments  "
+                parent="reporting_menu"
+        />
+        <menuitem
+                id="first_payments_customers_report_menu"
+                name="first payments customers Report"
+                parent="reporting_Installments_menu"
+                action="first_payments_customers_report_wizard_action"
+        />
+        <menuitem
+                id="transaction_installments_report_menu"
+                name="Transaction Installments Report"
+                parent="reporting_Installments_menu"
+                action="transaction_installments_report_wizard_action"
+        />
+<!--        <menuitem-->
+<!--                id="installments_payments_report_menu"-->
+<!--                name="Installments Payment Report"-->
+<!--                parent="reporting_Installments_menu"-->
+<!--                action="installments_payments_report_wizard_action"-->
+<!--        />-->
+<!--        <menuitem-->
+<!--                id="installments_not_payments_report_menu"-->
+<!--                name="Installments Not Payment Report"-->
+<!--                parent="reporting_Installments_menu"-->
+<!--                action="installments_not_payments_report_wizard_action"-->
+<!--        />-->
+
+        <menuitem
+                id="filtered_transaction_menu"
+                name="Report Filtered Transaction "
+                parent="reporting_menu"
+        />
+        <menuitem
+                id="filtered_transaction_report_menu"
+                name="Filtered Transaction Report"
+                parent="filtered_transaction_menu"
+                action="filtered_transaction_report_wizard_action"
+        />
+
+        <!--        <menuitem-->
+        <!--        id="filtered_transaction_section_report_menu"-->
+        <!--        name="Filtered Transaction  Section Report"-->
+        <!--        parent="reporting_menu"-->
+        <!--        action="filtered_transaction_section_report_wizard_action"-->
+        <!--        />-->
+        <!--        <menuitem-->
+        <!--                id="filtered_transaction_section_report_menu"-->
+        <!--                name="Filtered Transaction  Section Report"-->
+        <!--                parent="filtered_transaction_menu"-->
+        <!--                action="filtered_transaction_section_report_wizard_action"-->
+        <!--        />-->
+
+
+
+
+        <menuitem
+                id="operations_maid_report_menu_main"
+                name="operations maid report menu main "
+                parent="reporting_menu"
+        />
+
+        <menuitem
+                id="operations_maid_report_menu"
+                name="Operations Maid Report"
+                action="operations_maid_report_wizard_action"
+                parent="operations_maid_report_menu_main"/>
+
+
+
+
+
+
+
+
+    </data>
+</odoo>

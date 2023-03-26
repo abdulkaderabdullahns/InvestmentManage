@@ -1,0 +1,195 @@
+<odoo>
+    <data>
+        <template id="transaction_installments_template">
+            <t t-call="web.html_container">
+                <div class="header" style="border-bottom: 2px solid black;">
+                <div class="row"
+                     style="font-family: 'Amiri', 'serif';width: 92%;height: 103px;margin-left: 7px;">
+                    <div style="width: 40%;">
+                         <br/>
+                         <strong>
+                            <span>Sudani Agrarion of Bank</span>
+                         </strong>
+                         <br/>
+                            <span>Finance of Bank</span>
+                     </div>
+
+                    <!-- <div style="width: 31%;margin-left: 7%;">
+                         <img src="bank/static/src/imge/tasneem.png" width="70"
+                            height="70"/>
+                    </div> -->
+
+                    <div class="text-right" style="width: 29%;">
+                        <br/>
+                         <strong>
+                            <span>البنك الزراعي السوداني</span>
+                         </strong>
+                         <br/>
+                            <span>الخرطوم الرئاسة المقرن</span>
+                     </div>
+                </div>
+            </div>
+
+               <h4 class="text-center">
+                    <strong>
+                        <span>Transaction Installments In Period</span>
+                    </strong>
+                    <br/>
+                    <strong>
+                        <span>From:</span>
+                    </strong>
+                    <t t-esc="from_date"/>
+                    <strong>
+                        <span>To:</span>
+                    </strong>
+                    <t t-esc="to_date"/>
+                </h4>
+                <br/>
+                <table class="table table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>#</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Requer id</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Requer Date</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Finance Type</strong>
+                            </th>
+                             <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Section</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Activity</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Formula </strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Customer Number</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Customer Name</strong>
+                            </th>
+<!--                            <th class="text-center" style="background-color:#ccdldl;">-->
+<!--                                <strong>Amount cert</strong>-->
+<!--                            </th>-->
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Install Number</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Install Amount</strong>
+                            </th>
+                             <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Pre Date</strong>
+                            </th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr>
+                                <td class="text-center">
+                                    <span t-esc="doc_index+1"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-field="doc.requer_num"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.req_date"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-field="doc.requer_num.fin_type"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-field="doc.requer_num.name_section"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-field="doc.requer_num.name_activity"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-field="doc.requer_num.for_number"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.requer_num.customer_id"/>
+                                 </td>
+                                  <td class="text-center">
+                                    <span t-field="doc.requer_num.customer_name"/>
+                                   </td>
+                                   <td class="text-center">
+                                    <span t-field="doc.install_num"/>
+                                   </td>
+                                <td class="text-center">
+                                    <span t-field="doc.install_amount"/>
+                                   </td>
+                                <td class="text-center">
+                                    <span t-field="doc.pre_date"/>
+                                   </td>
+
+<!--                                  <td class="text-center">-->
+<!--                                    <span t-field="doc.installment"/>-->
+<!--                                 </td>-->
+<!--                                 <t t-foreach="install_ids" t-as="o">-->
+<!--                                     <span t-field ="o.install_num"/>-->
+<!--                                     <span t-field="o.install_amount"/>-->
+<!--                                     <span t-field="o.pre_date"/>-->
+<!--                                     <tr>-->
+<!--                                          <td class="text-center">-->
+<!--                                               <span t-field="o.install_amount"/>-->
+<!--                                          </td>-->
+<!--                                          <td class="text-center">-->
+<!--                                               <span t-field="o.pre_date"/>-->
+<!--                                          </td>-->
+
+
+                             </tr>
+                            </t>
+                    </tbody>
+                </table>
+                <div t-attf-class="footer o_standard_footer"
+                 style="font-family: 'Amiri', 'serif';width: 92%;height: 103px;margin-left: 7px;">
+                 <div class="text-center" style="border-top: 2px solid black;">
+                    <ul class="list-inline mb4">
+                        <li class="list-inline-item d-inline">
+                            <strong>Phone:</strong>
+                            <span class="o_force_ltr"><b>+249122454000</b></span>
+                        </li>
+                        <li class="list-inline-item d-inline">
+                            <strong>Email:</strong>
+                            <span>ABC@gmail.com</span>
+                        </li>
+                        <li class="list-inline-item d-inline">
+                            <strong>Web:</strong>
+                            <span><b>www.ABC.com</b></span>
+                        </li>
+                    </ul>
+                    <div class="text-muted">
+                        page:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                    </div>
+               </div>
+            </div>
+                <div class="text-muted">
+                    page:
+                    <span class="page"/>
+                    /
+                    <span class="topage"/>
+                </div>
+            </t>
+        </template>
+
+         <report id="transaction_installments_report"
+                model="bank.transaction_installments"
+                string="Transaction Installments Report"
+                file="bank.transaction_installments_template"
+                name="bank.transaction_installments_template"
+                report_type="qweb-html"
+        />
+    </data>
+</odoo>

@@ -1,0 +1,87 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+model_bank_imag_admin, model_bank_imag,model_bank_imag,bank.group_admin,0,0,0,0
+states_admin,states admin,model_bank_states,bank.group_admin,1,1,1,1
+localities_admin,localities admin,model_bank_localities,bank.group_admin,1,1,1,1
+states_admin,states admin,model_bank_states,bank.group_admin,1,1,1,1
+job_admin,job admin,model_bank_job,bank.group_admin,1,1,1,1
+customers_admin,customers admin,model_bank_customers,bank.group_admin,1,1,1,1
+section_admin,section admin,model_bank_section,bank.group_admin,1,1,1,1
+activity_admin,activity admin,model_bank_activity,bank.group_admin,1,1,1,1
+formula_admin,formula admin,model_bank_formula,bank.group_admin,1,1,1,1
+gurantee_admin,gurantee admin,model_bank_gurantee,bank.group_admin,1,1,1,1
+rejection_reasons_admin,rejection_reasons admin,model_bank_rejection_reasons,bank.group_admin,1,1,1,1
+stumbling_reasons_admin,stumbling_reasons admin,model_bank_stumbling_reasons,bank.group_admin,1,1,1,1
+judges_admin,judges admin,model_bank_judges,bank.group_admin,1,1,1,1
+courts_admin,courts admin,model_bank_courts,bank.group_admin,1,1,1,1
+job_detalls_admin,job_detalls admin,model_bank_job_detalls,bank.group_admin,1,1,1,1
+social_state_admin,social_state admin,model_bank_social_state,bank.group_admin,1,1,1,1
+finance_request_admin,finance_request admin,model_bank_finance_request,bank.group_admin,1,1,1,1
+states_admin,states admin,model_bank_states,bank.group_admin,1,1,1,1
+first_payments_customers_admin,first_payments_customers admin,model_bank_first_payments_customers,bank.group_admin,1,1,1,1
+transaction_installments_admin,transaction_installments admin,model_bank_transaction_installments,bank.group_admin,1,1,1,1
+installments_admin,installments admin,model_bank_installments,bank.group_admin,1,1,1,1
+installments_payments_admin,installments_payments admin,model_bank_installments_payments,bank.group_admin,1,1,1,1
+stumbling_admin,stumbling admin,model_bank_stumbling,bank.group_admin,1,1,1,1
+transmit_to_low_mangement_admin,transmit_to_low_mangement admin,model_bank_transmit_to_low_mangement,bank.group_admin,1,1,1,1
+rescheduled_admin,rescheduled admin,model_bank_rescheduled,bank.group_admin,1,1,1,1
+reschedule_installd_admin,reschedule_installd admin,model_bank_reschedule_installd,bank.group_admin,1,1,1,1
+transmit_to_court_admin,transmit_to_court admin,model_bank_transmit_to_court,bank.group_admin,1,1,1,1
+states_manger,states manger,model_bank_states,bank.group_manger,1,1,1,1
+localities_manger,localities manger,model_bank_localities,bank.group_manger,1,1,1,1
+job_manger,job manger,model_bank_job,bank.group_manger,1,1,1,1
+customers_manger,customers manger,model_bank_customers,bank.group_manger,1,1,1,1
+section_manger,section manger,model_bank_section,bank.group_manger,1,1,1,1
+activity_manger,activity manger,model_bank_activity,bank.group_manger,1,1,1,1
+formula_manger,formula manger,model_bank_formula,bank.group_manger,1,1,1,1
+gurantee_manger,gurantee manger,model_bank_gurantee,bank.group_manger,1,1,1,1
+rejection_reasons_manger,rejection_reasons manger,model_bank_rejection_reasons,bank.group_manger,1,1,1,1
+stumbling_reasons_manger,stumbling_reasons manger,model_bank_stumbling_reasons,bank.group_manger,1,1,1,1
+judges_manger,judges manger,model_bank_judges,bank.group_manger,1,1,1,1
+courts_manger,courts manger,model_bank_courts,bank.group_manger,1,1,1,1
+job_detalls_manger,job_detalls manger,model_bank_job_detalls,bank.group_manger,1,1,1,1
+social_state_manger,social_state manger,model_bank_social_state,bank.group_manger,1,1,1,1
+finance_request_manger,finance_request manger,model_bank_finance_request,bank.group_manger,1,1,1,0
+first_payments_customers_manger,first_payments_customers manger,model_bank_first_payments_customers,bank.group_manger,1,1,1,1
+transaction_installments_manger,transaction_installments manger,model_bank_transaction_installments,bank.group_manger,1,1,1,1
+installments_manger,installments manger,model_bank_installments,bank.group_manger,1,1,1,1
+installments_payments_manger,installments_payments manger,model_bank_installments_payments,bank.group_manger,1,1,1,1
+stumbling_manger,stumbling manger,model_bank_stumbling,bank.group_manger,1,1,1,1
+transmit_to_low_mangement_manger,transmit_to_low_mangement manger,model_bank_transmit_to_low_mangement,bank.group_manger,1,1,1,1
+rescheduled_manger,rescheduled manger,model_bank_rescheduled,bank.group_manger,1,1,1,1
+reschedule_installd_manger,reschedule_installd manger,model_bank_reschedule_installd,bank.group_manger,1,1,1,1
+transmit_to_court_manger,transmit_to_court manger,model_bank_transmit_to_court,bank.group_manger,1,1,1,1
+states_dataentry,states dataentry,model_bank_states,bank.group_dataentry,1,1,1,1
+localities_dataentry,localities dataentry,model_bank_localities,bank.group_dataentry,1,1,1,1
+job_dataentry,job dataentry,model_bank_job,bank.group_dataentry,1,1,1,1
+customers_dataentry,customers dataentry,model_bank_customers,bank.group_dataentry,1,1,1,1
+section_dataentry,section dataentry,model_bank_section,bank.group_dataentry,1,1,1,1
+activity_dataentry,activity dataentry,model_bank_activity,bank.group_dataentry,1,1,1,1
+formula_dataentry,formula dataentry,model_bank_formula,bank.group_dataentry,1,1,1,1
+gurantee_dataentry,gurantee dataentry,model_bank_gurantee,bank.group_dataentry,1,1,1,1
+rejection_reasons_dataentry,rejection_reasons dataentry,model_bank_rejection_reasons,bank.group_dataentry,1,1,1,1
+stumbling_reasons_dataentry,stumbling_reasons dataentry,model_bank_stumbling_reasons,bank.group_dataentry,1,1,1,1
+judges_dataentry,judges dataentry,model_bank_judges,bank.group_dataentry,1,1,1,1
+courts_dataentry,courts dataentry,model_bank_courts,bank.group_dataentry,1,1,1,1
+job_detalls_dataentry,job_detalls dataentry,model_bank_job_detalls,bank.group_dataentry,1,1,1,1
+social_state_dataentry,social_state dataentry,model_bank_social_state,bank.group_dataentry,1,1,1,1
+finance_request_dataentry,finance_request dataentry,model_bank_finance_request,bank.group_dataentry,1,1,1,1
+first_payments_customers_dataentry,first_payments_customers dataentry,model_bank_first_payments_customers,bank.group_dataentry,1,1,1,1
+transaction_installments_dataentry,transaction_installments dataentry,model_bank_transaction_installments,bank.group_dataentry,1,1,1,1
+installments_dataentry,installments dataentry,model_bank_installments,bank.group_dataentry,1,1,1,1
+installments_payments_dataentry,installments_payments dataentry,model_bank_installments_payments,bank.group_dataentry,1,1,1,1
+stumbling_dataentry,stumbling dataentry,model_bank_stumbling,bank.group_dataentry,1,1,1,1
+transmit_to_low_mangement_dataentry,transmit_to_low_mangement dataentry,model_bank_transmit_to_low_mangement,bank.group_dataentry,1,1,1,1
+rescheduled_dataentry,rescheduled dataentry,model_bank_rescheduled,bank.group_dataentry,1,1,1,1
+reschedule_installd_dataentry,reschedule_installd dataentry,model_bank_reschedule_installd,bank.group_dataentry,1,1,1,1
+transmit_to_court_dataentry,transmit_to_court dataentry,model_bank_transmit_to_court,bank.group_dataentry,1,1,1,1
+
+
+
+
+
+
+
+
+
+
+

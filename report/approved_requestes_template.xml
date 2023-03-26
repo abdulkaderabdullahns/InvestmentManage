@@ -1,0 +1,228 @@
+<odoo>
+    <data>
+        <template id="approved_requestes_template">
+            <t t-call="web.html_container">
+
+               <h4 class="text-center">
+                    <div class="row"
+                     style="font-family: 'Amiri', 'serif';width: 92%;height: 103px;margin-left: 7px;">
+                    <div style="width: 40%;">
+                         <br/>
+                         <strong>
+                            <span>Sudani Agrarion of Bank</span>
+                         </strong>
+                         <br/>
+                            <span>Finance of Bank</span>
+                     </div>
+
+                    <!-- <div style="width: 31%;margin-left: 7%;">
+                         <img src="bank/static/src/imge/tasneem.png" width="70"
+                            height="70"/>
+                    </div> -->
+
+                    <div class="text-right" style="width: 29%;">
+                        <br/>
+                         <strong>
+                            <span>البنك الزراعي السوداني</span>
+                         </strong>
+                         <br/>
+                            <span>الخرطوم الرئاسة المقرن</span>
+                     </div>
+                </div>
+                    <strong>
+                        <span>Approved Request In Period</span>
+                    </strong>
+                    <br/>
+                    <strong>
+                        <span>From:</span>
+                    </strong>
+                    <t t-esc="from_date"/>
+                    <strong>
+                        <span>To:</span>
+                    </strong>
+                    <t t-esc="to_date"/>
+<!--                    <br/>-->
+<!--                    <strong>-->
+<!--                        <span>states:</span>-->
+<!--                    </strong>-->
+<!--                    <t t-esc="state"/>-->
+                </h4>
+                <br/>
+                <table class="table table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>#</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Requer id</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Requer Date</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Customer</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>finance Type</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Gender</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Birth Date</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Address</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Job</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Social State</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>State</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Localities</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Section</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Activity</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Formula </strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Requer Amount</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Gurantee</strong>
+                            </th>
+                            <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Amount Cert</strong>
+                            </th>
+                            <!-- <th class="text-center" style="background-color:#ccdldl;">
+                                <strong>Rejection Reasons </strong>
+                            </th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr>
+                                <td class="text-center">
+                                    <span t-esc="doc_index+1"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.requer_num"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.req_date"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.customer_id"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-field="doc.fin_type"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-field="doc.customer_id.Gender"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-field="doc.customer_id.birth"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-field="doc.customer_id.address"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-field="doc.customer_id.job_id"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-field="doc.customer_id.social_state"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.customer_id.states_id"/>
+                                 </td>
+                                <td class="text-center">
+                                    <span t-field="doc.customer_id.localities_id"/>
+                                 </td>
+
+                                 <td class="text-center">
+                                    <span t-field="doc.name_section"/>
+                                 </td>
+                                 <td class="text-center">
+                                    <span t-field="doc.name_activity"/>
+                                 </td>
+
+                                 <td class="text-center">
+                                    <span t-field="doc.for_number"/>
+                                 </td>
+                                  <td class="text-center">
+                                    <span t-field="doc.req_amount"/>
+                                 </td>
+
+                                  <td class="text-center">
+                                    <span t-field="doc.Gurantee_ids"/>
+                                 </td>
+                                <t t-if="doc.state =='accept'">
+                                 <td class="text-center">
+                                    <span t-field="doc.amount_cert"/>
+                                  </td>
+                                 </t>
+                                <!-- <t t-else="doc.state =='cancel'">
+                                 <td class="text-center">
+                                    <span t-field="doc.reason"/>
+                                 </td>
+                                 </t>  -->
+                             </tr>
+                            </t>
+                    </tbody>
+                </table>
+                <div t-attf-class="footer o_standard_footer"
+                 style="font-family: 'Amiri', 'serif';width: 92%;height: 103px;margin-left: 7px;">
+                 <div class="text-center" style="border-top: 2px solid black;">
+                    <ul class="list-inline mb4">
+                        <li class="list-inline-item d-inline">
+                            <strong>Phone:</strong>
+                            <span class="o_force_ltr"><b>+249122454000</b></span>
+                        </li>
+                        <li class="list-inline-item d-inline">
+                            <strong>Email:</strong>
+                            <span>ABC@gmail.com</span>
+                        </li>
+                        <li class="list-inline-item d-inline">
+                            <strong>Web:</strong>
+                            <span><b>www.ABC.com</b></span>
+                        </li>
+                    </ul>
+                    <div class="text-muted">
+                        page:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                    </div>
+               </div>
+            </div>
+                                <div class="text-muted">
+                                    page:
+                                    <span class="page"/>
+                                    /
+                                    <span class="topage"/>
+                                </div>
+            </t>
+        </template>
+        <report id="approved_requestes_report"
+                model="bank.finance_request"
+                string="Approved Fequest Report"
+                file="bank.approved_requestes_template"
+                name="bank.approved_requestes_template"
+                report_type="qweb-html"
+        />
+
+
+
+    </data>
+</odoo>

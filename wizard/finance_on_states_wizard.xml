@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+		<record id="operations_divestment_wizard_view_form" model="ir.ui.view">
+			<field name="name">finance_on_states_wizard_view.form</field>
+			<field name="model">finance_on_states.report.wizard</field>
+			<field name="arch" type="xml">
+                <form string="Finance On States Report">
+				    <sheet>
+                        <h1><marquee>التمـــــــــــــويل حســـــــــــــب الولايــــــــــــــــــــــــــــــــــــات</marquee></h1>
+                        <group>
+                            <group>
+					            <field name="from_date" required="True"/>
+                            </group>
+                            <group>
+                                <field name="to_date" required="True"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="get_report" string="Print Report" type="object" class="btn-primary" icon="fa-file-pdf-o"/>
+                            <button name="get_chart" string="Chart Report" type="object" class="btn-primary" icon="fa-pie-chart"/>
+                            OR 
+                            <button string="Cancel" class="btn-danger" special="cancel" icon="fa-close"/>
+                        </footer>
+                    </sheet>
+                </form>
+			</field>
+		</record>
+        <act_window id="finance_on_states_report_wizard_action"
+                    name="Finance On States Report"
+                    res_model="finance_on_states.report.wizard"
+                    view_mode="form"
+                    target="new"
+        />
+
+    </data>
+</odoo>

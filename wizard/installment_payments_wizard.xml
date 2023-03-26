@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+		<record id="installments_payments_wizard_view_form" model="ir.ui.view">
+			<field name="name">installments_payments_wizard_view.form</field>
+			<field name="model">installments_payments.report.wizard</field>
+			<field name="arch" type="xml">
+                <form string="first payments customers Report">
+				    <sheet>
+                        <h1><marquee>تقـــريــر الدفعيات للاقساط</marquee></h1>
+                        <group>
+                            <group>
+					            <field name="from_date" required="True"/>
+                            </group>
+                            <group>
+                                <field name="to_date" required="True"/>
+                            </group>
+                            <group>
+                                <field name="customer_id"/>
+                            </group>
+<!--                            <group>-->
+<!--                                <field name="customer_name"/>-->
+<!--                            </group>-->
+                            <group>
+                                <field name="fin_type"/>
+                            </group>
+                            <group>
+                                <field name="name_section"/>
+                            </group>
+                            <group>
+                                <field name="name_activity"/>
+                            </group>
+                            <group>
+                                <field name="for_number"/>
+                            </group>
+
+                            <!--<group>-->
+                                <!--<field name="state"/>-->
+                            <!--</group>-->
+                            <!--<group>-->
+                                <!--<field name="number"/>-->
+                                <!--<field name="by" invisible="1"/>-->
+                            <!--</group>-->
+                        </group>
+                        <footer>
+                            <button name="get_report" string="Print Report" type="object" class="btn-primary" icon="fa-file-pdf-o"/>
+                            OR
+                            <button string="Cancel" class="btn-danger" special="cancel" icon="fa-close"/>
+                        </footer>
+                    </sheet>
+                </form>
+			</field>
+		</record>
+        <act_window id="installments_payments_report_wizard_action"
+                    name="Installments Payments Report"
+                    res_model="installments_payments.report.wizard"
+                    view_mode="form"
+                    target="new"
+        />
+
+    </data>
+</odoo>
